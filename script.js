@@ -5,6 +5,7 @@ canvas.height = 800;
 const blocksizeValues = [200, 160, 130, 100, 80, 60, 50, 40, 30, 25, 20, 18, 16, 15, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
 const ANSWER = 'giraffe';
+let LEVEL = levels[0];
 let ROUND = 0;
 let CURRENT_BLOCKSIZE = blocksizeValues[ROUND];
 
@@ -23,10 +24,32 @@ image1.addEventListener('load', function(){
 
 const guessInputElement = document.getElementById('guess-input');
 guessInputElement.addEventListener('keydown', function(event){
-  if (event.key == "Enter"){
-    makeGuess();
-  }  
+    if (event.key == "Enter"){
+        makeGuess();
+    }  
 });
+
+const guessInputButtonElement = document.getElementById('guess-input-submit');
+guessInputButtonElement.addEventListener('click', function(event){
+    makeGuess();
+});
+
+function startLevel(level_index){
+    //reset global variables
+    ROUND = 0;
+    CURRENT_BLOCKSIZE = blocksizeValues[ROUND];
+    //set level object
+    LEVEL = levels[level_index];
+    //reset html
+    const previousGuessesContainer = document.getElementById('previous-guesses-container');
+    previousGuessesContainer.innerHTML = '';
+    //draw image
+    const image = new Image();
+    image.src = LEVEL.source;
+    image.onload = function(){
+        redrawImage(image, ctx, CURRENT_BLOCKSIZE);
+    }
+}
 
 function makeGuess(){
     //get guess
