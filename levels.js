@@ -18,7 +18,7 @@ levels = [
     },
     {
         answer: 'batman',
-        source: IMAGES_FOLDER + 'batman.jpg',
+        source: IMAGES_FOLDER + 'batman.jpeg',
     },
     {
         answer: 'butterfly',
@@ -27,6 +27,10 @@ levels = [
     {
         answer: 'africa',
         source: IMAGES_FOLDER + 'africa.png',
+    },
+    {
+        answer: 'bowser',
+        source: IMAGES_FOLDER + 'bowser.png',
     },
 
 ];
