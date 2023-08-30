@@ -7,6 +7,20 @@ p {
     font-size: 24px;
 }
 
+#header {
+    display: flex;
+    align-items: center;
+}
+
+#next-level-button {
+    margin-left: 12px;
+}
+
+#main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
 #canvas1 {
     border: 2px solid white;
     top: 50%;

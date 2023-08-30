@@ -5,15 +5,22 @@
     <link rel="stylesheet" href="pixle.css">
   </head>
   <body>
-    <h1 id="header">Guess what is in the pixelated image below:</h1>
-    <canvas id="canvas1"></canvas>
-    <br>
-    <label for="guess-input">Guess: </label>
-    <input type="text" id="guess-input">
-    <button id="guess-input-submit">Submit</button>
-    <!-- <input type="number" id="blocksize-input">
-    <button id="blocksize-submit" type="submit">Submit</button> -->
-    <div id="previous-guesses-container"></div>
+    <header id="header">
+      <p id="current-level-indicator">Current Level: 1</p>
+      <button id="next-level-button">Next Level</button>
+    </header>
+    <main id="main-content">
+      <div id="left-main-partition">
+        <h1 id="level-title">Guess what is in the pixelated image below:</h1>
+        <canvas id="canvas1"></canvas>
+      </div>
+      <div id="right-main-partition">
+        <label for="guess-input">Guess: </label>
+        <input type="text" id="guess-input">
+        <button id="guess-input-submit">Submit</button>
+        <div id="previous-guesses-container"></div>
+      </div>
+    </main>
     
     <script src="levels.js"></script>
     <script src="script.js"></script>
